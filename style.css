@@ -1,0 +1,234 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    background-color: beige;
+    font-size: 20px;
+    font-weight: 300;
+    height: 100vh;
+}
+
+/*  General  */
+
+.container{
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    padding: 50px;
+}
+
+.player-0-panel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+}
+
+.player-1-panel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+}
+
+.center{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 80%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+
+/*  Buttons  */
+
+button{
+    width: 200px;
+    color: #555;
+    background: none;
+    border: none;
+    font-size: 100%;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 300;
+    transition: font-weight 0.3s;
+}
+
+button:hover{
+    font-weight: 600;
+}
+
+button:focus{
+    outline: none;
+}
+
+.btn-new{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.final-score{
+    text-align: center;
+    border: none;
+}
+
+.btn-roll,
+.btn-hold,
+.final-score{
+    margin-bottom: 15px;
+}
+
+.final-score:focus{
+    background-color: wheat;
+    outline: none;
+    border-bottom: 2px solid red;
+}
+
+
+/*  Icons  */
+.small-icon{
+    color: #eb4d4d;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+    font-size: 120%;
+}
+
+
+/*  Dice  */
+.dice{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    height: 100px;
+    box-shadow: 0px 10px 20px rgb(0, 0, 0);
+    top: 40%;
+}
+
+
+/*  Players  */
+
+.player-name{
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.player-score{
+    text-align: center;
+    font-size: 400%;
+    font-weight: 100;
+    color: #eb4d4d;
+    margin-bottom: 100px;
+}
+
+.player-current-box{
+    background-color: #eb4d4d;
+    color: #fff;
+    width: 35%;
+    margin: 0 auto;
+    padding: 12px;
+    text-align: center;
+}
+
+.player-current-label{
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-size: 80%;
+    color: #222;
+}
+
+.player-current-score{
+    font-size: 140%;
+}
+
+/*  Active  */
+.active{
+    background-color: #f7f7f7;
+}
+
+.active .player-name{
+    font-weight: 600;
+}
+
+.active .player-name:after{
+    content: '\2022';
+    color: #eb4d4d;
+    margin-left: 10px;
+    animation-name: dot;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes dot {
+    from{color: #eb4d4d;}
+    to{color: #f7f7f7;}
+}
+
+/*  Winner  */
+.winner{
+    background-color: #fff;
+}
+
+.winner .player-name{
+    color: #eb4d4d;
+}
+
+
+/*  Award  */
+
+.award{
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    height: 30vh;
+    width: 30vw;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.award-icon{
+    font-size: 60px;
+    color: gold;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%);
+}
+
+.award p{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 30px;
+    color: goldenrod;
+}
+
+.award-close{
+    position: absolute;
+    left: 95%;
+    cursor: pointer;
+    font-size: 20px;
+}
+
